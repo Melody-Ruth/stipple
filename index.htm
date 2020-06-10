@@ -8,10 +8,31 @@
     <script src="stipple.js"></script>
 </head>
 
-<body>
-
-<input id="upload" type="file" onChange="handleImageUpload()" />
+<body onload="setUpSizeInput()">
+<!--
+<input id="toStipple" type="file" onChange="handleImageUpload()" />
 <img id="display-image" src="" />
+<img id="result-image" src="" />
+<p id="debug">Hello<p/>
+
+
+<input type="file" id="imageLoader" name="imageLoader" />
+<canvas id="imageCanvas"></canvas>
+!-->
+<p>Image width: </p>
+<input type="number" id="inputWidth" onChange="handleSizeInput()"/>
+<!--<p>Image height: </p>
+<input type="number" id="inputHeight"/>-->
+<input type="file" id="toStipple" />
+<input type="button" value="Stipple!" onClick="doStipple()"/>
+
+<img id="display-image" src="" />
+<img id="result-image" src="" />
+<img id="result-image2" src="" />
+
+<canvas id="testingCanvas"/>
+<canvas id="newCanvas"/>
+
 </body>
 
 </html> 

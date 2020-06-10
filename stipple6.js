@@ -41,7 +41,7 @@ function handleImageUpload() {
 
 	reader.readAsDataURL(readImage);
 	
-	//doStipple(readImage);
+	doStipple(readImage);
 }
 
 function showStipple() {
@@ -50,7 +50,6 @@ function showStipple() {
 }
 
 function doStipple(srcImage) {
-	handleImageUpload();
 	var testingImage = document.getElementById("display-image");
 	//var testingImage = srcImage;
 	testingImage.onload = function(){
@@ -112,13 +111,16 @@ function doStipple(srcImage) {
 				pixelData.data[i] = 0;
 				pixelData.data[i + 1] = 0;
 				pixelData.data[i + 2] = 0;
-				/*if (i % 500 == 0){
+				if (i % 500 == 0){
 					console.log("Yes!");
-				}*/
+				}
 			} else {
 				pixelData.data[i] = 255;
 				pixelData.data[i + 1] = 255;
 				pixelData.data[i + 2] = 255;
+				if (i % 500 == 0){
+					console.log("No!");
+				}
 			}
 		}
 		temp2.putImageData(pixelData,0,0);
@@ -132,8 +134,5 @@ function doStipple(srcImage) {
 		document.getElementById("testingCanvas").style.display="none";
 		document.getElementById("result-image").style.display="none";
 		document.getElementById("result-image2").style.display="none";
-		console.log("Done!");
-		
-		showStipple();
 	}
 }
