@@ -8,28 +8,23 @@
 </head>
 
 <body onload="setUpSizeInput()">
-<!--
-<input id="toStipple" type="file" onChange="handleImageUpload()" />
-<img id="display-image" src="" />
-<img id="result-image" src="" />
-<p id="debug">Hello<p/>
+<div id="title">
+<img src="graphics/title.png">
+</div>
 
-
-<input type="file" id="imageLoader" name="imageLoader" />
-<canvas id="imageCanvas"></canvas>
-!-->
-<!--
-<p>Image width: </p>
-<input type="number" id="inputWidth" onChange="handleSizeInput()"/>-->
+<div id="inputs">
 <input type="file" id="toStipple" />
 <input type="button" value="Stipple!" onClick="doStipple()"/>
-
 <img id="display-image" src="" />
+</div>
+
+<div id="results">
 <img id="result-image" src="" />
 <img id="result-image2" src="" />
 
 <canvas id="testingCanvas"/>
 <canvas id="newCanvas"/>
+</div>
 
 </body>
 

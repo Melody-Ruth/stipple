@@ -2,7 +2,7 @@
 //imageLoader.addEventListener('change', handleImage, false);
 //var testImage;
 
-var mainWidth = window.innerWidth
+var mainWidth = window.innerWidth-10;
 
 /*function setUpSizeInput() {
 	var widthInput = document.getElementById("inputWidth");
