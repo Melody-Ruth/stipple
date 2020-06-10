@@ -4,9 +4,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="text/html; charset=ascii" />
 <title>Stipple</title>
+<script language="JavaScript1.2"></script>
+    <script src="stipple.js"></script>
 </head>
 
-<body>
+<body onload="setUpSizeInput()">
 <!--
 <input id="toStipple" type="file" onChange="handleImageUpload()" />
 <img id="display-image" src="" />
@@ -18,11 +20,11 @@
 <canvas id="imageCanvas"></canvas>
 !-->
 <p>Image width: </p>
-<input type="number"/>
+<input type="number" id="inputWidth" onChange="handleSizeInput()"/>
 <!--<p>Image height: </p>
 <input type="number" id="inputHeight"/>-->
 <input type="file" id="toStipple" />
-<input type="button" value="Stipple!"/>
+<input type="button" value="Stipple!" onClick="doStipple()"/>
 
 <img id="display-image" src="" />
 <img id="result-image" src="" />
