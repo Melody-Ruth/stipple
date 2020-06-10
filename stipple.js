@@ -2,27 +2,19 @@
 //imageLoader.addEventListener('change', handleImage, false);
 //var testImage;
 
-var mainWidth = 500
+var mainWidth = window.innerWidth
 
-function setUpSizeInput() {
+/*function setUpSizeInput() {
 	var widthInput = document.getElementById("inputWidth");
 	widthInput.defaultValue = 500;
 	widthInput.max = 2500;
 	widthInput.min = 1;
-	/*var heightInput = document.getElementById("inputHeight");
-	heightInput.defaultValue = 500;
-	heightInput.max = 2500;
-	heightInput.min = 1;*/
 }
 
 function handleSizeInput() {
 	var widthInput = document.getElementById("inputWidth");
 	mainWidth = widthInput.value;
-	/*var heightInput = document.getElementById("inputHeight");
-	heightInput.defaultValue = 500;
-	heightInput.max = 2500;
-	heightInput.min = 1;*/
-}
+}*/
 
 var testWidth;
 function handleImageUpload() {
@@ -62,8 +54,13 @@ function doStipple(srcImage) {
 			testCanvas.width = this.width;
 			testCanvas.height = this.height;
 		}*/
-		testCanvas.height = mainWidth*this.height/this.width;
-		testCanvas.width = mainWidth;
+		if (this.width > mainWidth) {
+			testCanvas.height = mainWidth*this.height/this.width;
+			testCanvas.width = mainWidth;
+		} else {
+			testCanvas.width = this.width;
+			testCanvas.height = this.height;
+		}
 		testCanvas.getContext('2d').drawImage(this, 0, 0, testCanvas.width, testCanvas.height);
 		var newCanvas = document.getElementById('newCanvas');
 		newCanvas.width = testCanvas.width;
